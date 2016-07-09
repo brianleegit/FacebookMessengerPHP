@@ -7,5 +7,5 @@
 // if ($hub_verify_token === 'brian') {
 //   echo $challenge;
 // }
-echo "fuck";
+echo "fuck you";
 ?>

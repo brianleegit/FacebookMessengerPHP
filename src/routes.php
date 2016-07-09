@@ -14,3 +14,9 @@ $app->get('/webhook', function ($request, $response, $args) {
     	return $response->withStatus(403);	
     }
 });
+
+$app->get('/test', function ($request, $response, $args) {
+    return "test";
+});
+
+

@@ -1,7 +1,7 @@
 <?php
 // Routes
 $app->get('/test', function ($request, $response, $args) {
-  return $response->write("fuck")
+  return $response->write("fuck");
 });
 $app->get('/webhook', function ($request, $response, $args) {
 	$verify_token = "brian";

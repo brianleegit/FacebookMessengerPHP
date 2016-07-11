@@ -8,6 +8,19 @@ return [
         'renderer' => [
             'template_path' => __DIR__ . '/../templates/',
         ],
+        'determineRouteBeforeAppMiddleware' => false,
+        'displayErrorDetails' => true,
+        'db' => [
+            'driver' => 'sqlsrv',
+            'host' => 'tcp:membot12.database.windows.net,1433',
+            'database' => 'memebot',
+            'username' => 'br3anlee',
+            'password' => 'Windows8@',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ],
+
 
         // Monolog settings
         'logger' => [

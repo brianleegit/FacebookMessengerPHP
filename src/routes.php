@@ -1,6 +1,8 @@
 <?php
 // Routes
-
+$app->get('/test', function ($request, $response, $args) {
+  
+});
 $app->get('/webhook', function ($request, $response, $args) {
 	$verify_token = "brian";
 	$request = $request->getQueryParams();
@@ -16,10 +18,6 @@ $app->get('/webhook', function ($request, $response, $args) {
 });
 $app->post('/webhook', function ($request, $response, $args) {
    $body = $request->getParsedBody();
-   $file = 'facebook_request.txt';
-   // Open the file to get existing content
-   $current = file_get_contents($file);
-   // Write the contents back to the file
-   file_put_contents($file, $body);
+   
 
 });

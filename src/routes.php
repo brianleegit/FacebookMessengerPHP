@@ -48,9 +48,9 @@ $app->get('/webhook', function ($request, $response, $args) {
 });
 
 $app->post('/webhook', function ($request, $response, $args) {
-    $body = json_decode($request->getParsedBody());   
+    $body = $request->getParsedBody();   
     $this->db->table('facebook_logs')->insert([
-        ['requests' => $body["sender"]["id"]]       
+        ['requests' => $body]       
     ]);
 
 });

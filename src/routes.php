@@ -11,7 +11,7 @@ $app->get('/test', function ($request, $response, $args) {
 
 $app->get('/createlog', function ($request, $response, $args) {
     try {
-        $this->db->schema::dropIfExists('facebook_logs');
+        $this->db->schema()->dropIfExists('facebook_logs');
         $this->db->schema()->create('facebook_logs', function($table)
         {
             $table->increments('id');

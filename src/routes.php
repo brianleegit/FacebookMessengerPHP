@@ -53,7 +53,7 @@ $app->post('/webhook', function ($request, $response, $args) {
     $this->db->table('facebook_logs')->insert([
         ['requests' => json_encode($body)]       
     ]);
-    $token = 'EAAZAsaRTFGuQBANKpVa2EEMZCsMrr9Jx7KZCyEpsRwZBzCGN1hQskQeKIIyNZAakTc5HK8y9AgELB9Pn5iXakLbeUDpKvhJwAwo5BerCa2vZAZBZBFqqHp1jOuuUfoYm127RZBCJWQiyYb6uwoMcFTwkdvocQecvqzzFxIF9u3PEHvQZDZD';
+    $token = 'EAAZAsaRTFGuQBAGnVfiFUe5OEmX93w472137OqBpszyaoxHDq35SHFZAQSiDSdQ34ozH7ZC5D42gadKcVvIngzazpHGiEFh3rkad8iHfdcKX7EUITZBrZApsfbZB9vA9Dx8M9MSdHZCZCRGvhEmcstDYNRM2bBFNJ4WT7n76qhbLJwZDZD';
     
     $sender = $body["entry"][0]["messaging"][0]["sender"]["id"];
     $post  = array(
@@ -72,6 +72,6 @@ $app->post('/webhook', function ($request, $response, $args) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
     //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
     //Execute the request
-    $result = curl_exec();
+    $result = curl_exec($ch);
 
 });

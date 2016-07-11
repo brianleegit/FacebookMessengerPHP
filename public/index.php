@@ -15,7 +15,23 @@ session_start();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
-$app = new \Slim\App($settings);
+
+$container = new \Slim\Container($settings);
+
+$container['db'] = function ($container) {
+    $capsule = new \Illuminate\Database\Capsule\Manager;
+    $capsule->addConnection($container['settings']['db']);
+
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+    return $capsule;
+};
+
+$app = new \Slim\App($container);
+
+
+
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';

@@ -3,19 +3,18 @@
 $app->get('/test', function ($request, $response, $args) {
   return $response->write("fuck");
 });
+
 $app->get('/webhook', function ($request, $response, $args) {
 	$verify_token = "brian";
-	$request = $request->getQueryParams();
-    $hubmode = $request['hub_mode'];
-    $hubverify = $request['hub_verify_token'];
-    $challenge = $request['hub_challenge'];
-   
-    if($hubmode == 'subscribe' && $hubverify == $verify_token){
-    	return $response->write($challenge)->withStatus(200);
-    }else {
-    	return $response->withStatus(403);	
-    }
+	$request = $request->getQueryParams();  
+ 
+  if(!empty($request['hub_verify_token']) && !empty($request['hub_mode']) && $request['hub_mode'] == 'subscribe' && $request['hub_verify_token'] == $verify_token){
+  	return $response->write($request['hub_challenge'])->withStatus(200);
+  }else {
+  	return $response->withStatus(403);	
+  }
 });
+
 $app->post('/webhook', function ($request, $response, $args) {
    $body = $request->getParsedBody();
    

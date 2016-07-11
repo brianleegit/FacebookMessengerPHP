@@ -54,11 +54,11 @@ $app->post('/webhook', function ($request, $response, $args) {
         ['requests' => json_encode($body)]       
     ]);
     $token = 'EAAZAsaRTFGuQBANKpVa2EEMZCsMrr9Jx7KZCyEpsRwZBzCGN1hQskQeKIIyNZAakTc5HK8y9AgELB9Pn5iXakLbeUDpKvhJwAwo5BerCa2vZAZBZBFqqHp1jOuuUfoYm127RZBCJWQiyYb6uwoMcFTwkdvocQecvqzzFxIF9u3PEHvQZDZD';
-    $req   = json_decode($body);
-    $sender = $req['entry'][0]['messaging'][0]['sender']['id'];
+    
+    $sender = $body["entry"][0]["messaging"][0]["sender"]["id"];
     $post  = array(
         "recipient" => array("id" => $sender),
-        "message"   => array("text" => "test")
+        "message"   => array("text" => "fuck you bitch")
     );
     $post  = json_encode($post);
     $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$token;

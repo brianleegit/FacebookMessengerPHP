@@ -26,13 +26,8 @@ $app->get('/createlog', function ($request, $response, $args) {
 
 $app->get('/showlog', function ($request, $response, $args) {
     try {
-        $this->db->schema()->create('facebook_logs', function($table)
-        {
-            $table->increments('id');
-            $table->string('requests');
-            $table->timestamps();
-        });
-        return $response->write('table created');
+        $logs = $this->db->table('facebook_logs')->get();
+        return var_dump($logs);
 
     } catch (Exception $e) {
         return $response->write($e->getMessage());        

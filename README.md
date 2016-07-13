@@ -1,18 +1,11 @@
-# Slim Framework 3 Skeleton Application
+# Facebook Bots Created with Slim Framework and Cognitive Services
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This application uses the latest Slim 3. It also uses Eloquent for debugging Facebook Requests. It connect to Microsoft Cognitive's Service's Computer Vision API. You will need SSL support for being able to connect with Facebook API. I strongly recommend to use this under Azure App Services which have free version and support SSL, you can find more information [here](https://azure.microsoft.com/en-us/services/app-service/). It supported PHP.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+To run this application first you need to create an .env file in the root of application. You will also need [Facebook Access token](https://developers.facebook.com/docs/messenger-platform) and  [Microsoft Cognitive's Service's Computer Vision API](https://www.microsoft.com/cognitive-services) subscription's key. 
 
-## Install the Application
+## Change the environtment file
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+DB_HOST is your Database Host name. DB_DATABASE is your database name. DB_USERNAME and DB_PASSWORD are your database username and password. FB_TOKEN is your Facebook Page Access Token. COGNITIVE_KEY is your Microsoft Cognitive's Service's Computer Vision API subscription's key.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-That's it! Now go build something cool.
+and that's it, You now can run the application.

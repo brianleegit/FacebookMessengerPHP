@@ -1,4 +1,4 @@
-# Facebook Bots Created with Slim Framework and Cognitive Services
+# Facebook Messenger Bots Created with Slim Framework and Cognitive Services
 
 This application uses the latest Slim 3. It also uses Database on Eloquent for debugging Facebook Requests. It connect to Microsoft Cognitive's Service's Computer Vision API. You will need SSL support for being able to connect with Facebook API. I strongly recommend to use this under Azure App Services which have free version and support SSL, you can find more information [here](https://azure.microsoft.com/en-us/services/app-service/). It supported PHP.
 
